@@ -45,10 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\BaseFactory.cs" />
+    <Compile Include="Common\IBaseFactory.cs" />
     <Compile Include="Common\Party.cs" />
     <Compile Include="Constants\CommonConstants.cs" />
-    <Compile Include="Sync\CompanyAccountFactory.cs" />
-    <Compile Include="Sync\CompanyFactory.cs" />
+    <Compile Include="Factory\CompanyAccountFactory.cs" />
+    <Compile Include="Factory\CompanyConstantFactory.cs" />
+    <Compile Include="Factory\CompanyCreditFactory.cs" />
+    <Compile Include="Factory\CompanyFactory.cs" />
+    <Compile Include="Factory\CompanyRoleRelFactory.cs" />
+    <Compile Include="Factory\CompanyVariantFactory.cs" />
     <Compile Include="Model\BaseModel.cs" />
     <Compile Include="Model\ComapnyCreditTerm.cs" />
     <Compile Include="Model\Company.cs" />
@@ -58,6 +64,7 @@
     <Compile Include="Model\CompanyRoleRel.cs" />
     <Compile Include="Model\CompanyVariant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Factory\CompanyRelFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

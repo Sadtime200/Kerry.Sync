@@ -25,7 +25,7 @@ namespace Kerry.Sync.IMP.Test
         public void TestMethod2()
         {
             var e = new CompanyFactory();
-            e.SynK3ToK35Company();
+            e.SynK3Data();
             
 
         }
@@ -34,9 +34,26 @@ namespace Kerry.Sync.IMP.Test
         public void TestMethod3()
         {
             var e = new CompanyAccountFactory();
-            e.SynK3ToK35CompanyAcc();
+            e.SynK3Data();
+        }
 
-
+        [TestMethod]
+        public void TestMethod4()
+        {
+            var e = new CompanyConstantFactory();
+            e.SynK3Data();
+        }
+        [TestMethod]
+        public void TestMethod5()
+        {
+            var e = new CompanyRelFactory();
+            e.SynK3Data();
+        }
+        [TestMethod]
+        public void TestMethod6()
+        {
+            var e = new CompanyRoleRelFactory();
+            e.SynK3Data();
         }
     }
 }
