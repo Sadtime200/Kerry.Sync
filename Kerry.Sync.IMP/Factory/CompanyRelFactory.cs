@@ -35,7 +35,9 @@ namespace Kerry.Sync.IMP
 
         public override string InitialInsertStr()
         {
-            var initialInser = @"insert ignore into tb_company_rel (company_id,rel_type,REL_COMPANY_ID,CREATE_BY,UPDATE_BY,CREATE_TIMESTAMP,UPDATE_TIMESTAMP) values  ";
+            var initialInser = @"
+set foreign_key_checks=0;
+insert ignore into tb_company_rel (company_id,rel_type,REL_COMPANY_ID,CREATE_BY,UPDATE_BY,CREATE_TIMESTAMP,UPDATE_TIMESTAMP) values  ";
 
             return initialInser;
         }

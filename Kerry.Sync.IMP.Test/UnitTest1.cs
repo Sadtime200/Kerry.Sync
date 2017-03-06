@@ -55,5 +55,11 @@ namespace Kerry.Sync.IMP.Test
             var e = new CompanyRoleRelFactory();
             e.SynK3Data();
         }
+        [TestMethod]
+        public void TestMethod7()
+        {
+            var e = new CompanyVariantFactory();
+            e.SynK3Data();
+        }
     }
 }
