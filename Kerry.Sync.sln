@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kerry.Sync.IMP", "Kerry.Syn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kerry.Sync.IMP.Test", "Kerry.Sync.IMP.Test\Kerry.Sync.IMP.Test.csproj", "{A8B1ED66-E736-41F4-BED2-8CE867988F96}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kerry.Sync.Service", "Kerry.Sync.Service\Kerry.Sync.Service.csproj", "{263A8D89-56F2-4A10-8B85-F1C6C2F5EDB5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{A8B1ED66-E736-41F4-BED2-8CE867988F96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8B1ED66-E736-41F4-BED2-8CE867988F96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8B1ED66-E736-41F4-BED2-8CE867988F96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{263A8D89-56F2-4A10-8B85-F1C6C2F5EDB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{263A8D89-56F2-4A10-8B85-F1C6C2F5EDB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{263A8D89-56F2-4A10-8B85-F1C6C2F5EDB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{263A8D89-56F2-4A10-8B85-F1C6C2F5EDB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

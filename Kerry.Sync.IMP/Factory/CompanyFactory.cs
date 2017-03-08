@@ -1,17 +1,11 @@
 ﻿using Kerry.Sync.IMP.Common;
-using Kerry.Sync.IMP.Constants;
-using Kerry.Sync.IMP.Model;
-using Kerry.Sync.Utility.DB;
-using Kerry.Sync.Utility.TaskManger;
 using Kerry.Sync.Utility.Text;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Text;
 
 namespace Kerry.Sync.IMP
 {
-    public class CompanyFactory:BaseFactory
+    public partial class CompanyFactory:BaseFactory
     {
         #region  Sql Part
         public override string GetK3Data(StringBuilder sb)

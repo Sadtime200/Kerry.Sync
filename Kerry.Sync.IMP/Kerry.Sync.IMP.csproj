@@ -53,6 +53,7 @@
     <Compile Include="Factory\CompanyConstantFactory.cs" />
     <Compile Include="Factory\CompanyCreditFactory.cs" />
     <Compile Include="Factory\CompanyFactory.cs" />
+    <Compile Include="Factory\CompanyOtherStatusFactory.cs" />
     <Compile Include="Factory\CompanyRoleRelFactory.cs" />
     <Compile Include="Factory\CompanyVariantFactory.cs" />
     <Compile Include="Model\BaseModel.cs" />

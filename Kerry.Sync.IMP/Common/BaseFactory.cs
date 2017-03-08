@@ -20,17 +20,18 @@ namespace Kerry.Sync.IMP.Common
         #endregion
 
         #region Implementation
-        public virtual bool SynK3Data()
+        public virtual bool SynK3Data(out int k3Rows ,out int k35Rows)
         {
+
             var missPartyIDs = JsonHelper.TextToJson<List<string>>(string.Concat(CommonConstants.APPDATA_PATH, "\\", CommonConstants.MISS_PARTYS_FILE_PATH));
             var sql = string.Empty;
-
+            k35Rows = 0;
+            k3Rows = 0;
             StringBuilder sb = new StringBuilder();
             StringBuilder insertStr = new StringBuilder();
 
             //Batch Insert Size .
             int size = 100;
-
             for (int i = 0; i <= missPartyIDs.Count + size; i += size)
             {
                 sb.Append("''");
@@ -53,6 +54,7 @@ namespace Kerry.Sync.IMP.Common
                     var rows = _k3DB.ExecuteDataTable(sql).Rows;
                     if (rows != null && rows.Count != 0)
                     {
+                        k3Rows += rows.Count;
                         insertStr = insertStr.Append(InitialInsertStr());
                         foreach (DataRow r in rows)
                         {
@@ -60,25 +62,26 @@ namespace Kerry.Sync.IMP.Common
                         }
                         var insertSql = insertStr.ToString().Remove(insertStr.Length - 1);
 
-
-
-                        //Batch Insert
-                        _k35DESTDB.ExecuteNonQuery(insertSql);
+                        k35Rows += _k35DESTDB.ExecuteNonQuery(insertSql);
                     }
                 }
                 catch (Exception ex)
                 {
                     return false;
                 }
-
                 //Clear String
                 insertStr = insertStr.Clear();
                 sb.Clear();
-
-
             }
-
+            var currentClass = System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.FullName;
+            var currentMethod = System.Reflection.MethodBase.GetCurrentMethod().Name;
+            ConsoleWrite(k3Rows, k35Rows, currentClass, currentMethod);
             return true;
+        }
+
+        private static void ConsoleWrite(int k3Rows, int k35Rows, string currentClass, string currentMethod)
+        {
+            Console.WriteLine("Executing Class: " + currentClass + " Method: " + currentMethod + ". Impact K3 rows: " + k3Rows + " Impact K35 rows: " + k35Rows);
         }
 
         #endregion

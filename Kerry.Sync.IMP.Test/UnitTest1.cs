@@ -2,6 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Kerry.Sync.IMP.Common;
 using Kerry.Sync.Utility.Text;
+using System.Reflection;
+using Kerry.Sync.Utility.TaskManger;
 
 namespace Kerry.Sync.IMP.Test
 {
@@ -17,7 +19,6 @@ namespace Kerry.Sync.IMP.Test
             k = TextHelper.Escape(k);
 
             var p = new Party();
-            p.PartyCompare();
 
         }
 
@@ -25,8 +26,10 @@ namespace Kerry.Sync.IMP.Test
         public void TestMethod2()
         {
             var e = new CompanyFactory();
-            e.SynK3Data();
-            
+            int k3Rows;
+            int k35Rows;
+            e.SynK3Data(out k3Rows,out k35Rows);
+
 
         }
 
@@ -34,32 +37,90 @@ namespace Kerry.Sync.IMP.Test
         public void TestMethod3()
         {
             var e = new CompanyAccountFactory();
-            e.SynK3Data();
+            int k3Rows;
+            int k35Rows;
+            e.SynK3Data(out k3Rows, out k35Rows);
+
         }
 
         [TestMethod]
         public void TestMethod4()
         {
             var e = new CompanyConstantFactory();
-            e.SynK3Data();
+            int k3Rows;
+            int k35Rows;
+            e.SynK3Data(out k3Rows, out k35Rows);
         }
         [TestMethod]
         public void TestMethod5()
         {
             var e = new CompanyRelFactory();
-            e.SynK3Data();
+            int k3Rows;
+            int k35Rows;
+            e.SynK3Data(out k3Rows, out k35Rows);
         }
         [TestMethod]
         public void TestMethod6()
         {
             var e = new CompanyRoleRelFactory();
-            e.SynK3Data();
+            int k3Rows;
+            int k35Rows;
+            e.SynK3Data(out k3Rows, out k35Rows);
         }
         [TestMethod]
         public void TestMethod7()
         {
             var e = new CompanyVariantFactory();
-            e.SynK3Data();
+            int k3Rows;
+            int k35Rows;
+            e.SynK3Data(out k3Rows, out k35Rows);
+        }
+
+
+
+
+        [TestMethod]
+        public void TestMethod8()
+        {
+            var e = new CompanyOthersStatusFactory();
+            int rows = 0;
+           
+        }
+        [TestMethod]
+        public void TestMethod9()
+        {
+            #region Initial Region
+
+            int k3Rows;
+            int k35Rows;
+            int missParties;
+            var p = new Party();
+            var company = new CompanyFactory();
+            var companyAccount = new CompanyAccountFactory();
+            var companyConstant = new CompanyConstantFactory();
+            var companyCredit = new CompanyFactory();
+            var companyRel = new CompanyRelFactory();
+            var companyRole = new CompanyRoleRelFactory();
+            var companyVariant = new CompanyVariantFactory();
+            var companyOtherStatus = new CompanyOthersStatusFactory();
+            var task = new TaskHelper();
+            #endregion
+
+
+            task.taskRunner(()=>p.PartyCompare(out k3Rows, out k35Rows, out missParties));
+            task.taskRunner(()=> company.SynK3Data(out k3Rows, out k35Rows));
+            task.taskRunner(()=> companyAccount.SynK3Data(out k3Rows, out k35Rows));
+            task.taskRunner(()=> companyConstant.SynK3Data(out k3Rows, out k35Rows));
+            task.taskRunner(()=> companyCredit.SynK3Data(out k3Rows, out k35Rows));
+            task.taskRunner(()=> companyRel.SynK3Data(out k3Rows, out k35Rows));
+            task.taskRunner(()=> companyRole.SynK3Data(out k3Rows, out k35Rows));
+            task.taskRunner(()=> companyVariant.SynK3Data(out k3Rows, out k35Rows));
+            task.taskRunner(()=> companyOtherStatus.SyncK35CompanyStatus(out k35Rows));
+            
+
+
+
+
         }
     }
 }

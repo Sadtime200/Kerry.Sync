@@ -8,6 +8,6 @@ namespace Kerry.Sync.IMP.Common
         string GetK3Data(StringBuilder sb);
         string InitialInsertStr();
         StringBuilder InsertK3Data(StringBuilder insertStr, DataRow r);
-        bool SynK3Data();
+        bool SynK3Data(out int k3Rows, out int k35Rows);
     }
 }
