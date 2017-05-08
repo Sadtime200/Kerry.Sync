@@ -49,6 +49,7 @@
     <Compile Include="Common\IBaseFactory.cs" />
     <Compile Include="Common\Party.cs" />
     <Compile Include="Constants\CommonConstants.cs" />
+    <Compile Include="Factory\AgentContractFactory.cs" />
     <Compile Include="Factory\CompanyAccountFactory.cs" />
     <Compile Include="Factory\CompanyConstantFactory.cs" />
     <Compile Include="Factory\CompanyCreditFactory.cs" />

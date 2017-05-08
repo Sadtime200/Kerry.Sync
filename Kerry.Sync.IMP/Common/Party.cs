@@ -48,7 +48,8 @@ namespace Kerry.Sync.IMP.Common
 
             k3Rows = k3ImpartRows;
             k35Rows = k35ImpartRows;
-            var missPartyIDs = k3PartyIDs.Except(k35PartyIDs).ToList();
+            //var missPartyIDs = k3PartyIDs.Except(k35PartyIDs).ToList();
+            var missPartyIDs = k35PartyIDs.Except(k3PartyIDs).ToList();
             if (missPartyIDs != null)
             {
                 JsonHelper.ObjectToText(missPartyIDs, ComposePath(_missPartys));

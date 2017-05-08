@@ -4,6 +4,7 @@ using Kerry.Sync.IMP.Common;
 using Kerry.Sync.Utility.Text;
 using System.Reflection;
 using Kerry.Sync.Utility.TaskManger;
+using Kerry.Sync.IMP.Factory;
 
 namespace Kerry.Sync.IMP.Test
 {
@@ -17,9 +18,7 @@ namespace Kerry.Sync.IMP.Test
 
              k = k.ToString();
             k = TextHelper.Escape(k);
-
             var p = new Party();
-
         }
 
         [TestMethod]
@@ -120,6 +119,16 @@ namespace Kerry.Sync.IMP.Test
 
 
 
+
+        }
+
+        [TestMethod]
+        public void TestMethod10()
+        {
+            var e = new AgentContractFactory();
+            int k3Rows;
+            int k35Rows;
+            e.SynK3Data(out k3Rows, out k35Rows);
 
         }
     }
